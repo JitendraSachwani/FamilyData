@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_marginTop="?attr/actionBarSize">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:id="@+id/HOF_title">
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#212121"
+                />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hint_HOF"
+                android:textSize="8pt"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="#212121" />
+        </LinearLayout>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/card_margin"
+            android:elevation="3dp"
+            cardCornerRadius="2dp"
+            android:layout_below="@id/HOF_title"
+            app:cardElevation="2dp">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/add_head_layout">
+
+
+                <ImageView
+                    android:id="@+id/head_thumbnail"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/add"
+                    android:clickable="true"
+                    android:scaleType="fitXY" />
+
+
+                <TextView
+                    android:id="@+id/head_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#4c4c4c"
+                    android:textSize="12pt"
+                    android:layout_gravity="center_vertical"
+                    android:text=" Add Head of Family"
+                    android:layout_marginLeft="10dp"
+                    />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:id="@+id/member_title"
+            android:layout_below="@+id/card_view">
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#212121"
+                />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hint_member_details"
+                android:textSize="8pt" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="#212121" />
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/member_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:layout_below="@+id/member_title"/>
+
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
